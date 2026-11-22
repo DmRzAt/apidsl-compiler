@@ -1,6 +1,8 @@
 from antlr4.Token import Token as AntlrToken
 from antlr4.error.ErrorListener import ErrorListener
 
+from apidsl import ast
+from apidsl.builder import AstBuilder
 from apidsl.errors import CompileError, ErrorKind
 from apidsl.generated.ApiDslParser import ApiDslParser
 from apidsl.lexer import lex
@@ -45,3 +47,7 @@ def parse_tree(source: str) -> ApiDslParser.ProgramContext:
     parser.removeErrorListeners()
     parser.addErrorListener(SyntaxErrorListener())
     return parser.program()
+
+
+def parse(source: str) -> ast.Program:
+    return AstBuilder().visit(parse_tree(source))
