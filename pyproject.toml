@@ -1,0 +1,13 @@
+[project]
+name = "apidsl"
+version = "0.1.0"
+description = "Compiler of a DSL for API testing to Python pytest code"
+requires-python = ">=3.11"
+dependencies = [
+    "pytest==9.2.0",
+    "requests==2.34.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
