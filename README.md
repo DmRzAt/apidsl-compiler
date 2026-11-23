@@ -84,7 +84,7 @@ docs/          dokumentacja (gramatyka, automaty, FIRST/FOLLOW, reguły semantyc
 
 - [x] 1. Gramatyka ANTLR, lekser i parser + testy błędów leksykalnych i składniowych
 - [x] 2. AST (visitor) + testy
-- [ ] 3. Analiza semantyczna + testy
+- [x] 3. Analiza semantyczna + testy
 - [ ] 4. Generowanie kodu, CLI, mock serwer, przykłady
 - [ ] 5. Dokumentacja
 
