@@ -1,0 +1,8 @@
+TEST "Semantic errors" {
+    EXPECT STATUS 200;
+    GET "/users/" + user_id;
+    EXPECT STATUS 700;
+}
+
+TEST "Semantic errors" {
+}
