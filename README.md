@@ -20,6 +20,10 @@ TEST "Login flow" {
 }
 ```
 
+**Pełna dokumentacja:** [`docs/dokumentacja.md`](docs/dokumentacja.md) — gramatyka formalna
+G = (N, T, P, S), tabela tokenów i automaty DFA, EBNF, zbiory FIRST/FOLLOW (dowód LL(1)),
+reguły semantyczne, schemat kompilatora i przykład kompilacji krok po kroku.
+
 ## Etapy kompilatora
 
 Lekser i parser są generowane przez **ANTLR 4** z gramatyki [`grammar/ApiDsl.g4`](grammar/ApiDsl.g4).
@@ -145,7 +149,7 @@ docs/          dokumentacja (gramatyka, automaty, FIRST/FOLLOW, reguły semantyc
 - [x] 2. AST (visitor) + testy
 - [x] 3. Analiza semantyczna + testy
 - [x] 4. Generowanie kodu, CLI, mock serwer, przykłady
-- [ ] 5. Dokumentacja
+- [x] 5. Dokumentacja
 
 ## Praca w zespole
 
