@@ -1,0 +1,15 @@
+BASE "http://localhost:8000";
+
+TEST "Role is not guest" {
+    POST "/login" BODY { "user": "admin", "pass": "123" };
+    EXPECT STATUS 200;
+    SAVE token = JSON "token";
+
+    GET "/me" HEADER "Authorization" = "Bearer " + token;
+    EXPECT JSON "role" == "guest";
+}
+
+TEST "Missing user" {
+    GET "/users/42";
+    EXPECT STATUS 200;
+}

@@ -1,0 +1,6 @@
+BASE "http://localhost:8000";
+
+TEST "Missing semicolon" {
+    GET "/users"
+    EXPECT STATUS 200;
+}

@@ -1,0 +1,22 @@
+BASE "http://localhost:8000";
+
+TEST "Login flow" {
+    POST "/login" BODY { "user": "admin", "pass": "123" };
+    EXPECT STATUS 200;
+    SAVE token = JSON "token";
+
+    GET "/me" HEADER "Authorization" = "Bearer " + token;
+    EXPECT STATUS 200;
+    EXPECT JSON "role" == "admin";
+}
+
+TEST "Wrong password is rejected" {
+    POST "/login" BODY { "user": "admin", "pass": "wrong" };
+    EXPECT STATUS 401;
+    EXPECT JSON "error" == "invalid credentials";
+}
+
+TEST "Profile requires a token" {
+    GET "/me";
+    EXPECT STATUS 401;
+}

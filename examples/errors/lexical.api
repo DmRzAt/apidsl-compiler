@@ -1,0 +1,6 @@
+BASE "http://localhost:8000";
+
+TEST "Unterminated string" {
+    GET "/users;
+    EXPECT STATUS 200;
+}
